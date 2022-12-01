@@ -1,12 +1,13 @@
-import {readFile} from "node:fs/promises";
+import * as fs from 'fs/promises';
 
 const create = async () => {
-    try {
-      const text = await readFile("./src/fs/files/fresh.txt", {encoding: "utf8"});
-      console.log(text);
-    } catch (err) {
-      console.log(err.message)
-    }
+  const path = 'src/fs/files/fresh.txt';
+  const message = `I am fresh and young`;
+  try {
+    await fs.writeFile(path, message, {flag: "wx"})
+  } catch (error) {
+    console.log('FS operation failed');
+  }
 };
 
 await create();
