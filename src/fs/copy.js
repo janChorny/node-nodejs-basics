@@ -7,10 +7,10 @@ const copy = async () => {
 
   try {
     const files = await fs.readdir(copyFrom);
-    await fs.mkdir(copyTo)
+    await fs.mkdir(copyTo);
 
     for (let file of files) {
-      await fs.copyFile(path.join(copyFrom, file), path.join(copyTo, file))
+      await fs.copyFile(path.join(copyFrom, file), path.join(copyTo, file));
     };
 
   } catch (error) {
