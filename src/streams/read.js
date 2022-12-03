@@ -1,5 +1,14 @@
+import { createReadStream } from "fs";
+import { stdout } from "process";
+
 const read = async () => {
-    // Write your code here 
+  try {
+    const filePath = 'src/fs/files/fileToRead.txt';
+    const readStream = createReadStream(filePath, 'utf-8');
+    readStream.on('data', (chunk) => stdout.write(chunk));
+  } catch (error) {
+    console.log(error.message)
+  }
 };
 
 await read();
