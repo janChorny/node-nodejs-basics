@@ -3,7 +3,7 @@ import { stdout } from "process";
 
 const read = async () => {
   try {
-    const filePath = 'src/fs/files/fileToRead.txt';
+    const filePath = 'src/streams/files/fileToRead.txt';
     const readStream = createReadStream(filePath, 'utf-8');
     readStream.on('data', (chunk) => stdout.write(chunk));
   } catch (error) {
