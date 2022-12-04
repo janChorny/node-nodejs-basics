@@ -6,7 +6,7 @@ const create = async () => {
   try {
     await fs.writeFile(path, message, {flag: "wx"});
   } catch (error) {
-    console.log('FS operation failed');
+    throw new Error('FS operation failed');
   }
 };
 

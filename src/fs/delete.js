@@ -6,7 +6,7 @@ const remove = async () => {
 
       await fs.unlink(path);
     } catch (error) {
-      console.log('FS operation failed');
+      throw new Error('FS operation failed');
     }
 };
 
