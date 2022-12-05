@@ -1,10 +1,13 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const file = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(file);
+const copyFrom = path.join(__dirname, 'files');
+const copyTo = path.join(__dirname, 'files_copy');
 
 const copy = async () => {
-  const copyFrom = ('src/fs/files');
-  const copyTo = ('src/fs/files_copy');
-
   try {
     const files = await fs.readdir(copyFrom);
     await fs.mkdir(copyTo);

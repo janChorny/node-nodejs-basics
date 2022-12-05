@@ -1,5 +1,5 @@
 import { Transform } from 'stream';
-import { stdin, stdout } from "process";
+import { stdin, stdout } from 'process';
 
 const myTransform = new Transform({
   transform(chunk, encoding, callback) {
